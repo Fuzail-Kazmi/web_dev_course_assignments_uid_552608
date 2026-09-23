@@ -1,0 +1,251 @@
+:root {
+    color: #252525;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #f2f5f8;
+}
+
+.form-card {
+    width: min(600px, calc(100% - 28px));
+    margin: 16px auto;
+    padding: 16px 18px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
+}
+.dialogue_box {
+    width: max-content;
+    margin: 16px auto;
+    padding: 16px 18px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
+    position: absolute;
+    top: 0;
+    left: 150px;
+}
+.text-link {
+  display: block;
+  color: #1e3a8a;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+.uid-badge {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+    margin: 16px 0px 24px 0px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+.required-note,
+.instruction {
+    margin: 0 0px 16px 4px;
+    color: #666;
+    font-size: 8px;
+}
+.field-label-bold {
+    font-weight: bold;
+}
+
+span {
+    color: #d42828;
+}
+
+
+fieldset {
+    position: relative;
+    margin: 0 0 14px;
+    padding: 17px 10px 10px;
+    border: 1px solid #d2dce5;
+    border-radius: 4px;
+}
+
+legend {
+    position: absolute;
+    top: -9px;
+    left: 10px;
+    padding: 3px 8px;
+    color: #fff;
+    background: #386d91;
+    border-radius: 3px;
+    font-size: 9px;
+    line-height: 1;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 11px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label,
+.field-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 9px;
+    line-height: 1.15;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    min-height: 22px;
+    padding: 4px 6px;
+    color: #222;
+    background: #fff;
+    border: 1px solid #c7d3df;
+    border-radius: 3px;
+    font: inherit;
+    font-size: 9px;
+}
+
+textarea {
+    display: block;
+    resize: vertical;
+}
+
+input::placeholder {
+    color: #8c959c;
+}
+
+.inline-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inline-field .field-label {
+    margin: 0 3px 0 0;
+}
+
+.choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 8px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    accent-color: #386d91;
+}
+
+.coverage-list {
+    display: grid;
+    gap: 13px;
+}
+
+.coverage-item {
+    padding: 7px 10px 9px;
+    background: #f8fafb;
+    border: 1px solid #dce3e8;
+    border-radius: 4px;
+}
+
+.coverage-item .field-label {
+    margin-bottom: 7px;
+    color: #222;
+}
+
+.choice-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 9px;
+}
+
+.instruction {
+    margin-bottom: 10px;
+}
+
+small {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+    font-size: 7px;
+}
+
+.file-input {
+    padding: 3px 5px !important;
+}
+
+.confirm {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 14px;
+    font-size: 8px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+    margin-top: -1px;
+}
+
+button {
+    padding: 7px 13px;
+    color: #fff;
+    background: #386d91;
+    border: 0;
+    border-radius: 2px;
+    font: inherit;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+button.clear-button {
+    color: #333;
+    background: #e1e6ea;
+}
+
+@media (max-width: 520px) {
+    .form-card {
+        width: 100%;
+        margin: 0 auto;
+        padding: 16px 12px;
+        border-radius: 0;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+}
