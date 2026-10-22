@@ -1,54 +1,147 @@
-// 🔄 Loop Practice Questions
-// 1. Print numbers 1 to 10  
-// Write a program using a for loop to print numbers from 1 to 10.
 
-// 2. Sum of first N numbers  
-// Use a while loop to calculate the sum of the first N natural numbers.
+// Q1: Print numbers from 1 to 10
+console.log("Q1: Numbers from 1 to 10");
 
-// 3. Multiplication table  
-// Print the multiplication table of a given number using a for loop.
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
 
-// 4. Factorial calculation  
-// Write a program using a while loop to find the factorial of a given number.
 
-// 5. Reverse counting  
-// Print numbers from 10 down to 1 using a for loop.
+// Q2: Sum of first N natural numbers using a while loop
+console.log("\nQ2: Sum of first N natural numbers");
 
-// 6. Even numbers up to N  
-// Use a do-while loop to print all even numbers up to N.
+let n = 5;
+let sum = 0;
+let i = 1;
 
-// 7. Sum of digits  
-// Write a program using a while loop to calculate the sum of digits of a given number.
+while (i <= n) {
+    sum += i;
+    i++;
+}
 
-// 8. Fibonacci series  
-// Generate the first 10 terms of the Fibonacci series using a for loop.
+console.log(`Sum of first ${n} natural numbers: ${sum}`);
 
-// 9. Guessing game  
-// Use a do-while loop to keep asking the user for a number until they guess the correct one.
 
-// 10. Prime number check  
-// Write a program using a for loop to check if a given number is prime.
+// Q3: Multiplication table using a for loop
+console.log("\nQ3: Multiplication table");
 
-// 📌 Submission Instructions:
-// 1. Comment your question
-// - At the top of each solution, write the question as a comment.
-// // Q1: Print numbers from 1 to 10
+let number = 7;
 
-// 2. Write your code
-// - Directly below the comment, add the solution code.
-// - Make sure each program runs and shows output in the console.
+for (let i = 1; i <= 10; i++) {
+    console.log(`${number} x ${i} = ${number * i}`);
+}
 
-// 3. Organize files
-// Create two files:
-//     1. conditional_statements.js → all 10 conditional questions.
-//     2. loops.js → all 10 loop questions.
 
-// 3. Push to GitHub
-// * Initialize a repo/ Create a new branch.
-// * Add both files.
-// * Commit with a clear message like "Added JS solutions for conditionals and loops".
-// * Push to GitHub.
+// Q4: Factorial calculation using a while loop
+console.log("\nQ4: Factorial calculation");
 
-// 4. Run and verify
-// - Run each file with node filename.js.
-// - The console should display outputs for all questions sequentially.
+let factorialNumber = 5;
+let factorial = 1;
+let j = 1;
+
+while (j <= factorialNumber) {
+    factorial *= j;
+    j++;
+}
+
+console.log(`Factorial of ${factorialNumber}: ${factorial}`);
+
+
+// Q5: Print numbers from 10 down to 1
+console.log("\nQ5: Reverse counting");
+
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+
+
+// Q6: Print even numbers up to N using do-while
+console.log("\nQ6: Even numbers up to N");
+
+let limit = 20;
+let even = 2;
+
+if (limit >= 2) {
+    do {
+        console.log(even);
+        even += 2;
+    } while (even <= limit);
+}
+
+
+// Q7: Sum of digits using a while loop
+console.log("\nQ7: Sum of digits");
+
+let digitNumber = 1234;
+let digitSum = 0;
+
+while (digitNumber > 0) {
+    digitSum += digitNumber % 10;
+    digitNumber = Math.floor(digitNumber / 10);
+}
+
+console.log(`Sum of digits: ${digitSum}`);
+
+
+// Q8: Generate the first 10 Fibonacci terms using a for loop
+console.log("\nQ8: Fibonacci series");
+
+let first = 0;
+let second = 1;
+
+for (let i = 1; i <= 10; i++) {
+    console.log(first);
+
+    let next = first + second;
+    first = second;
+    second = next;
+}
+
+
+// Q9: Guessing game using do-while
+console.log("\nQ9: Guessing game");
+
+const readline = require("node:readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const correctNumber = 7;
+
+function guessingGame() {
+    rl.question("Guess a number between 1 and 10: ", (answer) => {
+        const guess = Number(answer);
+
+        if (guess === correctNumber) {
+            console.log("Correct! You guessed the number.");
+            rl.close();
+        } else {
+            console.log("Wrong guess. Try again.");
+            guessingGame();
+        }
+    });
+}
+
+guessingGame();
+
+
+// Q10: Check whether a number is prime using a for loop
+console.log("\nQ10: Prime number check");
+
+let primeNumber = 17;
+let isPrime = primeNumber >= 2;
+
+for (let i = 2; i <= Math.sqrt(primeNumber); i++) {
+    if (primeNumber % i === 0) {
+        isPrime = false;
+        break;
+    }
+}
+
+if (isPrime) {
+    console.log(`${primeNumber} is a prime number.`);
+} else {
+    console.log(`${primeNumber} is not a prime number.`);
+}

@@ -1,183 +1,178 @@
-// 📝 Questions
+// Q1: Check if a number is positive, negative, or zero
 
-// Simple if condition 
-
-// Q1. Write a program that checks if a number is positive, negative, or zero.
-
-input = prompt("Enter a number:");
+let input = prompt("Enter a number:");
+input = Number(input);
 
 if (input > 0) {
-    console.log(`The Enter Value Is ${input} And it's Positive Number`);
+    console.log(`The entered value is ${input} and it's a positive number.`);
 } else if (input < 0) {
-    console.log(`The Enter Value Is ${input} And it's Negative Number`);
+    console.log(`The entered value is ${input} and it's a negative number.`);
 } else {
-    console.log(`The Enter Value Is ${input} And it's Zero Number`);
+    console.log(`The entered value is ${input} and it's zero.`);
 }
 
 
-// Q2. Even or odd check
-// Using an if-else statement, determine whether a given integer is even or odd.
+// Q2: Check whether a number is even or odd
 
-input = prompt("Enter a number: ");
+let evenOddInput = Number(prompt("Enter a number:"));
 
-if (input % 2 == 0) {
-  console.log(`${input} is Even Number`)
-}else {
-  console.log(`${input} is Odd Number`)
+if (evenOddInput % 2 === 0) {
+    console.log(`${evenOddInput} is an even number.`);
+} else {
+    console.log(`${evenOddInput} is an odd number.`);
 }
 
 
-// Q3. Largest of two numbers
-// Write a program that takes two numbers and prints the larger one using conditional statements.
+// Q3: Find the largest of two numbers
 
-num1 = prompt("Enter Your First Number: ")
-num2 = prompt("Enter Your Second Number: ")
+let num1 = Number(prompt("Enter your first number:"));
+let num2 = Number(prompt("Enter your second number:"));
 
-if (num1 < num2){
-    console.log(`${num2} is greater number`)
-}else{
-    console.log(`${num1} is greater number`)
+if (num1 > num2) {
+    console.log(`${num1} is the greater number.`);
+} else if (num2 > num1) {
+    console.log(`${num2} is the greater number.`);
+} else {
+    console.log("Both numbers are equal.");
 }
 
 
-// Q4. Grade evaluation
-// Using if-else-if, assign grades (A, B, C, D, F) based on a student’s percentage score.
+// Q4: Calculate percentage and assign a grade
 
-let marks = prompt("Enter Your Marks: ");
+let marks = Number(prompt("Enter your marks:"));
 let total_marks = 1100;
 
 function student_percentage(marks, total_marks) {
-  let percentage = (marks / total_marks) * 100; 
-  return percentage;
+    let percentage = (marks / total_marks) * 100;
+    return percentage;
 }
 
 let finalPercentage = student_percentage(marks, total_marks);
 
-if (finalPercentage > 85 && finalPercentage < 100){
-  console.log(`${finalPercentage}% You Got An "A Grade"`)
-}else if (finalPercentage > 75){
-  console.log(`${finalPercentage}% You Got An "B Grade"`)
-}else if (finalPercentage > 55){
-  console.log(`${finalPercentage}% You Got An "C Grade"`)
-}else if (finalPercentage > 45) {
-  console.log(`${finalPercentage}% You Got An "D Grade"`)
-}else {
-  console.log(`${finalPercentage}% You Got An "F Grade"`)
+if (marks < 0 || marks > total_marks) {
+    console.log("Invalid marks. Enter marks between 0 and 1100.");
+} else if (finalPercentage >= 85) {
+    console.log(`${finalPercentage.toFixed(2)}% - You got an A grade.`);
+} else if (finalPercentage >= 75) {
+    console.log(`${finalPercentage.toFixed(2)}% - You got a B grade.`);
+} else if (finalPercentage >= 55) {
+    console.log(`${finalPercentage.toFixed(2)}% - You got a C grade.`);
+} else if (finalPercentage >= 45) {
+    console.log(`${finalPercentage.toFixed(2)}% - You got a D grade.`);
+} else {
+    console.log(`${finalPercentage.toFixed(2)}% - You got an F grade.`);
 }
 
 
-// Q5. Leap year check
-// Write a program that checks if a given year is a leap year using conditional statements.
+// Q5: Check whether a year is a leap year
 
-let year = prompt("Enter a year to check its leap year: ") 
+let year = Number(prompt("Enter a year to check whether it is a leap year:"));
 
 if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-  console.log(`${year} is a leap year`);
+    console.log(`${year} is a leap year.`);
 } else {
-  console.log(`${year} is not a leap year`);
+    console.log(`${year} is not a leap year.`);
 }
 
 
-// Q6. Day of week switch
-// Use a switch-case to print the name of the day when given a number (1 = Monday, 2 = Tuesday, … 7 = Sunday).
+// Q6: Print the day name using switch-case
 
-const dayNumber = Number(prompt("Enter a Number of Day: "));
+const dayNumber = Number(prompt("Enter a day number (1-7):"));
 let dayName;
 
 switch (dayNumber) {
-  case 1:
-    dayName = "Monday";
-    break;
-  case 2:
-    dayName = "Tuesday";
-    break;
-  case 3:
-    dayName = "Wednesday";
-    break;
-  case 4:
-    dayName = "Thursday";
-    break;
-  case 5:
-    dayName = "Friday";
-    break;
-  case 6:
-    dayName = "Saturday";
-    break;
-  case 7:
-    dayName = "Sunday";
-    break;
-  default:
-    dayName = "Unknown Day";
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+    default:
+        dayName = "Unknown Day";
 }
 
 console.log(dayName);
 
 
-// Q7. Calculator switch
-// Create a simple calculator using switch-case that performs addition, subtraction, multiplication, or division based on user input.
+// Q7: Create a simple calculator using switch-case
 
-const num1 = Number(prompt("Enter a first number: "));
-const num2 = Number(prompt("Enter a second number: "));
+const calcNum1 = Number(prompt("Enter the first number:"));
+const calcNum2 = Number(prompt("Enter the second number:"));
 
-const operator = prompt("Enter an operator ( +, -, *, / ): ");
+const operator = prompt("Enter an operator (+, -, *, /):");
 let result;
 
 switch (operator) {
-  case "+":
-    result = num1 + num2;
-    break;
-  case "-":
-    result = num1 - num2;
-    break;
-  case "*":
-    result = num1 * num2;
-    break;
-  case "/":
-    if (num2 === 0) {
-      result = "Error: Division by zero is not allowed.";
-    } else {
-      result = num1 / num2;
-    }
-    break;
-  default:
-    result = "Invalid Operator";
+    case "+":
+        result = calcNum1 + calcNum2;
+        break;
+    case "-":
+        result = calcNum1 - calcNum2;
+        break;
+    case "*":
+        result = calcNum1 * calcNum2;
+        break;
+    case "/":
+        if (calcNum2 === 0) {
+            result = "Error: Division by zero is not allowed.";
+        } else {
+            result = calcNum1 / calcNum2;
+        }
+        break;
+    default:
+        result = "Invalid Operator";
 }
 
 console.log(`Result: ${result}`);
 
 
-// Q8. Vowel or consonant
-// Write a program that checks whether a given character is a vowel or consonant using switch-case.
+// Q8: Check whether a character is a vowel or consonant
 
-let input = prompt("Enter your letter: ");
+let letterInput = prompt("Enter your letter:");
 
-if (input && input.length === 1) {
-    let letter = input.toLowerCase();
+if (letterInput && letterInput.length === 1) {
+    let letter = letterInput.toLowerCase();
 
     switch (letter) {
-        case 'a':
-        case 'e':
-        case 'i':
-        case 'o':
-        case 'u':
-            console.log(`${input} is a vowel.`);
+        case "a":
+        case "e":
+        case "i":
+        case "o":
+        case "u":
+            console.log(`${letterInput} is a vowel.`);
             break;
         default:
-            if (letter >= 'a' && letter <= 'z') {
-                console.log(`${input} is a consonant.`);
+            if (letter >= "a" && letter <= "z") {
+                console.log(`${letterInput} is a consonant.`);
             } else {
-                console.log("Invalid input. Please enter a valid letter.");
+                console.log("Invalid input. Please enter an English letter.");
             }
     }
 } else {
-    alert("Please enter exactly one character.");
+    console.log("Please enter exactly one character.");
 }
 
 
-// Q9. Traffic light system 
-// Using switch-case, print instructions based on traffic light color (Red = Stop, Yellow = Wait, Green = Go).
+// Q9: Print instructions based on traffic light color
 
-const light = prompt("Enter a traffic light color (Red, Yellow, Green):").toLowerCase();
+const light = prompt("Enter a traffic light color (Red, Yellow, Green):")
+    .toLowerCase();
+
 let signal;
 
 switch (light) {
@@ -197,17 +192,20 @@ switch (light) {
 console.log(signal);
 
 
-// Q10. Menu-driven program
-// Write a program using switch-case where the user selects from a menu (e.g., 1 = Check Balance, 2 = Deposit, 3 = Withdraw, 4 = Exit).
+// Q10: Create a menu-driven program using switch-case
 
+const option = Number(
+    prompt(
+        "Select an option:\n1 = Check Balance\n2 = Deposit\n3 = Withdraw\n4 = Exit"
+    )
+);
 
-const option = Number(prompt("Enter a Number for Select your Option: "))
 let selectOutput;
 
 switch (option) {
     case 1:
         selectOutput = "Check Balance";
-        break;  
+        break;
     case 2:
         selectOutput = "Deposit";
         break;
@@ -222,6 +220,3 @@ switch (option) {
 }
 
 console.log(selectOutput);
-
-
-
